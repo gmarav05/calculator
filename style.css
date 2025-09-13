@@ -1,3 +1,8 @@
+body {
+    background-color: #fffde6;
+}
+
+
 h1 {
 
     font-size: 50px;
@@ -6,6 +11,29 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
+
+
+}
+
+.container {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 400px;
+    height: 400px;
+    font-weight: 400;
+
+}
+
+button:hover {
+
+    background-color:crimson;
+    color: aliceblue;
+
 
 
 }

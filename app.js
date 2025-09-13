@@ -40,16 +40,41 @@ function divide(num1,num2) {
     console.log(a/b);
 }
 
-const num1 = window.prompt("Enter number a: ");
-const num2 = window.prompt("Enter number b: ");
+// const num1 = window.prompt("Enter number a: ");
+// const operator = window.prompt("Enter Operation = ");
+// const num2 = window.prompt("Enter number b: ");
 
 // addition(num1,num2);
 
-console.log(  addition(num1,num2));
+// console.log(  addition(num1,num2));
 
-console.log(subtract(num1,num2));
+// console.log(subtract(num1,num2));
 
-console.log(multiply(num1,num2));
+// console.log(multiply(num1,num2));
 
-console.log(divide(num1,num2));
+// console.log(divide(num1,num2));
+
+
+// function operate(operator, num1, num2) {
+
+//     if (operator === "+") {
+
+//         return addition(num1, num2);
+        
+//     } else if (operator === "-") {
+
+//         return subtract(num1,num2);
+
+//     }else if (operator === "x") {
+
+//         return multiply(num1, num2);
+
+//     } else if (operator === "/") {
+
+//         return divide(num1, num2);
+//     }
+    
+// }
+
+// operate(operator,num1,num2);
 
