@@ -55,26 +55,26 @@ function divide(num1,num2) {
 // console.log(divide(num1,num2));
 
 
-// function operate(operator, num1, num2) {
+function operate(operator, num1, num2) {
 
-//     if (operator === "+") {
+    if (operator === "+") {
 
-//         return addition(num1, num2);
+        return addition(num1, num2);
         
-//     } else if (operator === "-") {
+    } else if (operator === "-") {
 
-//         return subtract(num1,num2);
+        return subtract(num1,num2);
 
-//     }else if (operator === "x") {
+    }else if (operator === "x") {
 
-//         return multiply(num1, num2);
+        return multiply(num1, num2);
 
-//     } else if (operator === "/") {
+    } else if (operator === "/") {
 
-//         return divide(num1, num2);
-//     }
+        return divide(num1, num2);
+    }
     
-// }
+}
 
-// operate(operator,num1,num2);
+operate(operator,num1,num2);
 
