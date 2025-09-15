@@ -22,9 +22,10 @@ function divide(num1, num2) {
   return a / b;
 }
 
-const num1 = " ";
-const operator = " ";
-const num2 = " ";
+let num1;
+let operator;
+let num2;
+let waitingSecondNumber = false;
 
 function operate(operator, num1, num2) {
   if (operator === "+") {
@@ -45,15 +46,50 @@ const display = document.querySelector(".display");
 
 clear.addEventListener("click", () => {
   display.textContent = "";
-  num1 = "";
-  num2 = "";
+  num1 = undefined;
+  num2 = undefined;
+  operator = undefined;
 });
 
-const buttons = document.querySelectorAll(".buttons");
+const buttons = document.querySelectorAll(".buttons button");
 
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    num1 = button;
-    display.textContent = num1;
+    const value = button.textContent;
+    if (!isNaN(value)) {
+      if (waitingSecondNumber) {
+        display.textContent = value;
+        waitingSecondNumber = false;
+      } else {
+        display.textContent += value;
+      }
+    }
   });
+});
+
+const operators = document.querySelectorAll("#operator");
+
+operators.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (num1 === undefined) {
+      num1 = parseFloat(display.textContent);
+    } else if (operator) {
+      num2 = parseFloat(display.textContent);
+      num1 = operate(operator, num1, num2);
+      display.textContent = num1;
+    }
+    operator = button.textContent;
+    waitingSecondNumber = true;
+  });
+});
+
+const equalButton = document.getElementById("equals");
+equalButton.addEventListener("click", () => {
+  if (num1 !== undefined && operator && display.textContent !== "") {
+    num2 = parseFloat(display.textContent);
+    num1 = operate(operator, num1, num2);
+    display.textContent = num1;
+    operator = undefined;
+    num2 = undefined;
+  }
 });
